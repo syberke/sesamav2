@@ -115,7 +115,7 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
-                        <p class="text-muted text-uppercase mb-1" style="font-size: 12px; font-weight: 600;">Progress</p>
+                        <p class="text-muted text-uppercase mb-1" style="font-size: 12px; font-weight: 600;">Progress Penyaluran</p>
                         <h2 class="fw-bold mb-0" style="color: #17a2b8;">
                             {{ $totalRecipients > 0 ? round(($distributedCount / $totalRecipients) * 100) : 0 }}%
                         </h2>
@@ -127,6 +127,62 @@
                 <div class="progress mt-3" style="height: 6px;">
                     <div class="progress-bar" role="progressbar"
                          style="width: {{ $totalRecipients > 0 ? ($distributedCount / $totalRecipients) * 100 : 0 }}%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card stat-card h-100" style="border-left-color: #6f42c1;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="text-muted text-uppercase mb-1" style="font-size: 12px; font-weight: 600;">Sudah Registrasi</p>
+                        <h2 class="fw-bold mb-0" style="color: #6f42c1;">{{ $registeredCount }}</h2>
+                    </div>
+                    <div class="stat-icon" style="background-color: #f3e5f5;">
+                        <i class="fas fa-user-check" style="color: #6f42c1;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card stat-card h-100" style="border-left-color: #dc3545;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="text-muted text-uppercase mb-1" style="font-size: 12px; font-weight: 600;">Belum Registrasi</p>
+                        <h2 class="fw-bold mb-0" style="color: #dc3545;">{{ $notRegisteredCount }}</h2>
+                    </div>
+                    <div class="stat-icon" style="background-color: #ffebee;">
+                        <i class="fas fa-user-times" style="color: #dc3545;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card stat-card h-100" style="border-left-color: #17a2b8;">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="text-muted text-uppercase mb-1" style="font-size: 12px; font-weight: 600;">Progress Registrasi</p>
+                        <h2 class="fw-bold mb-0" style="color: #17a2b8;">
+                            {{ $totalRecipients > 0 ? round(($registeredCount / $totalRecipients) * 100) : 0 }}%
+                        </h2>
+                    </div>
+                    <div class="stat-icon" style="background-color: #e0f7fa;">
+                        <i class="fas fa-clipboard-check" style="color: #17a2b8;"></i>
+                    </div>
+                </div>
+                <div class="progress mt-3" style="height: 6px;">
+                    <div class="progress-bar" role="progressbar" style="background: #17a2b8;
+                         width: {{ $totalRecipients > 0 ? ($registeredCount / $totalRecipients) * 100 : 0 }}%"></div>
                 </div>
             </div>
         </div>

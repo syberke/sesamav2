@@ -13,6 +13,9 @@ class DashboardController extends Controller
         $distributedCount = Recipient::where('is_distributed', true)->count();
         $pendingCount = $totalRecipients - $distributedCount;
 
+        $registeredCount = Recipient::where('registrasi', true)->count();
+        $notRegisteredCount = $totalRecipients - $registeredCount;
+
         $uniformCount = Recipient::where('uniform_received', true)->count();
         $shoesCount = Recipient::where('shoes_received', true)->count();
         $bagCount = Recipient::where('bag_received', true)->count();
@@ -26,6 +29,8 @@ class DashboardController extends Controller
             'totalRecipients',
             'distributedCount',
             'pendingCount',
+            'registeredCount',
+            'notRegisteredCount',
             'uniformCount',
             'shoesCount',
             'bagCount',

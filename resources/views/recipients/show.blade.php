@@ -12,11 +12,10 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <!-- Info Utama -->
                     <div class="col-md-6">
                         <table class="table table-borderless">
                             <tr>
-                                <td><strong>QR Code:</strong></td>
+                                <td width="40%"><strong>QR Code:</strong></td>
                                 <td>
                                     <span class="badge bg-primary">{{ $recipient->qr_code }}</span>
                                 </td>
@@ -27,11 +26,11 @@
                             </tr>
                             <tr>
                                 <td><strong>Nama Ayah:</strong></td>
-                                <td>{{ $recipient->Ayah_name }}</td>
+                                <td>{{ $recipient->Ayah_name ?? '-' }}</td>
                             </tr>
                             <tr>
                                 <td><strong>Nama Ibu:</strong></td>
-                                <td>{{ $recipient->Ibu_name }}</td>
+                                <td>{{ $recipient->Ibu_name ?? '-' }}</td>
                             </tr>
                             <tr>
                                 <td><strong>Tempat, Tanggal Lahir:</strong></td>
@@ -45,6 +44,57 @@
                                 <td><strong>Nama Sekolah:</strong></td>
                                 <td>{{ $recipient->school_name }}</td>
                             </tr>
+                            <tr>
+                                <td><strong>Kelas:</strong></td>
+                                <td>{{ $recipient->class }}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-md-6">
+                        <table class="table table-borderless">
+                            <tr>
+                                <td width="40%"><strong>Alamat:</strong></td>
+                                <td>{{ $recipient->address }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Nomor Sepatu:</strong></td>
+                                <td>{{ $recipient->shoe_size }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ukuran Baju:</strong></td>
+                                <td>{{ $recipient->shirt_size }}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Status Registrasi:</strong></td>
+                                <td>
+                                    @if($recipient->registrasi)
+                                        <span class="badge bg-success">Sudah Registrasi</span>
+                                    @else
+                                        <span class="badge bg-danger">Belum Registrasi</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Status Penyaluran:</strong></td>
+                                <td>
+                                    @if($recipient->is_distributed)
+                                        <span class="badge bg-success">
+                                            <i class="fas fa-check me-1"></i>Sudah Menerima
+                                        </span>
+                                    @else
+                                        <span class="badge bg-warning text-dark">
+                                            <i class="fas fa-clock me-1"></i>Belum Menerima
+                                        </span>
+                                    @endif
+                                </td>
+                            </tr>
+                            @if($recipient->distributed_at)
+                            <tr>
+                                <td><strong>Tanggal Penyaluran:</strong></td>
+                                <td>{{ $recipient->distributed_at->format('d F Y, H:i') }}</td>
+                            </tr>
+                            @endif
                         </table>
                     </div>
                 </div>

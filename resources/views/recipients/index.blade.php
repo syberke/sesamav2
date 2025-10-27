@@ -20,12 +20,15 @@
                 <i class="fas fa-search"></i>
             </button>
         </form>
-        <div class="d-flex gap-2">
-            <a href="{{ route('recipients.import') }}" class="btn btn-primary btn-sm-custom">
-                <i class="fas fa-plus me-2"></i>Import Excel
+        <div class="d-flex gap-2 flex-wrap">
+            <a href="{{ route('recipients.create') }}" class="btn btn-success btn-sm-custom">
+                <i class="fas fa-user-plus me-1"></i>Tambah Data
             </a>
-            <a href="{{ route('recipients.printAll') }}" class="btn btn-primary btn-sm-custom">
-                <i class="fas fa-download me-1"></i> Download Semua QR (ZIP)
+            <a href="{{ route('recipients.import') }}" class="btn btn-primary btn-sm-custom">
+                <i class="fas fa-file-excel me-1"></i>Import Excel
+            </a>
+            <a href="{{ route('recipients.printAll') }}" class="btn btn-info btn-sm-custom text-white">
+                <i class="fas fa-download me-1"></i>Download QR (ZIP)
             </a>
         </div>
     </div>
